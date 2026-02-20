@@ -1,0 +1,1788 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Manjit Guha — Principal Architect & Enterprise Data Platform Leader with 21+ years in MDM, Reltio, Cloud, and AI/ML. Based in Kolkata, India." />
+  <meta name="keywords"
+    content="Manjit Guha, Principal Architect, MDM, Reltio, Enterprise Architecture, Data Management, AWS, GCP, Generative AI, Kolkata" />
+  <meta name="author" content="Manjit Guha" />
+  <meta property="og:title" content="Manjit Guha | Principal Architect & Enterprise Data Platform Leader" />
+  <meta property="og:description"
+    content="21+ years building scalable data platforms, MDM solutions, and cloud architectures across Healthcare, Lifesciences, Insurance, and Banking." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://manjitguha.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Manjit Guha | Principal Architect" />
+  <meta name="twitter:description" content="Enterprise Data Platform Leader | MDM Specialist | Cloud Architect" />
+  <title>Manjit Guha | Principal Architect & Enterprise Data Platform Leader</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@400;500;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────────── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --navy-light: #334155;
+      --cyan: #0ea5e9;
+      --cyan-dark: #0284c7;
+      --teal: #14b8a6;
+      --slate: #64748b;
+      --slate-light: #94a3b8;
+      --bg: #f8fafc;
+      --bg-alt: #f1f5f9;
+      --white: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #475569;
+      --radius: 12px;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+      --shadow-lg: 0 20px 40px rgba(15, 23, 42, .12);
+      --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-heading: 'Outfit', system-ui, -apple-system, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: var(--cyan);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+
+    a:hover {
+      color: var(--cyan-dark);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* ─── Typography ───────────────────────────────────────────── */
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: var(--font-heading);
+      line-height: 1.15;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 4.2rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .section-label {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: .8rem;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      color: var(--text-muted);
+      max-width: 65ch;
+      font-size: 1.125rem;
+      line-height: 1.8;
+      margin-bottom: 4rem;
+    }
+
+    /* ─── Layout Helpers ───────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 7rem 0;
+    }
+
+    section:nth-child(even) {
+      background: var(--bg-alt);
+    }
+
+    /* ─── Navigation ───────────────────────────────────────────── */
+    #nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, .92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+      transition: box-shadow var(--transition);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+
+    .nav-logo {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -.01em;
+    }
+
+    .nav-logo span {
+      color: var(--cyan);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--slate-light);
+      font-size: .9rem;
+      font-weight: 500;
+      transition: color var(--transition);
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-cta {
+      background: var(--cyan);
+      color: var(--white) !important;
+      padding: .45rem 1.1rem;
+      border-radius: 6px;
+      font-size: .85rem !important;
+      font-weight: 600 !important;
+      transition: background var(--transition) !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--cyan-dark) !important;
+      color: var(--white) !important;
+    }
+
+    /* Hamburger */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: .4rem;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: transform var(--transition), opacity var(--transition);
+    }
+
+    /* ─── Hero ─────────────────────────────────────────────────── */
+    #hero {
+      padding: 0;
+      min-height: 100vh;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 80% 50%, rgba(14, 165, 233, .13) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 50% at 20% 80%, rgba(20, 184, 166, .09) 0%, transparent 60%);
+    }
+
+    /* Grid pattern overlay */
+    #hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
+      background-size: 48px 48px;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 8rem 0 6rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      background: rgba(14, 165, 233, .12);
+      border: 1px solid rgba(14, 165, 233, .25);
+      color: var(--cyan);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      padding: .35rem .9rem;
+      border-radius: 999px;
+      margin-bottom: 1.5rem;
+      animation: fadeInDown .6s ease both;
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    .hero-name {
+      color: var(--white);
+      margin-bottom: .5rem;
+      animation: fadeInUp .6s .1s ease both;
+    }
+
+    .hero-name em {
+      font-style: normal;
+      color: var(--cyan);
+    }
+
+    .hero-title {
+      font-size: clamp(1rem, 2.5vw, 1.35rem);
+      color: var(--slate-light);
+      font-weight: 400;
+      margin-bottom: 1.4rem;
+      animation: fadeInUp .6s .2s ease both;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: var(--slate-light);
+      max-width: 58ch;
+      margin-bottom: 2.4rem;
+      animation: fadeInUp .6s .3s ease both;
+    }
+
+    .hero-tagline strong {
+      color: var(--white);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      animation: fadeInUp .6s .4s ease both;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .5rem;
+      padding: .85rem 2rem;
+      border-radius: var(--radius);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all var(--transition);
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--cyan);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background: var(--cyan-dark);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, .35);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1.5px solid rgba(255, 255, 255, .25);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: translateY(-2px);
+    }
+
+    .hero-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      margin-top: 3.5rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      animation: fadeInUp .6s .5s ease both;
+    }
+
+    .hero-stat-value {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+    }
+
+    .hero-stat-value span {
+      color: var(--cyan);
+    }
+
+    .hero-stat-label {
+      font-size: .8rem;
+      color: var(--slate-light);
+      margin-top: .25rem;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+    }
+
+    /* ─── About ─────────────────────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .about-text p {
+      color: var(--text-muted);
+      margin-bottom: 1.1rem;
+      font-size: 1rem;
+    }
+
+    .about-text p strong {
+      color: var(--text);
+    }
+
+    .about-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .highlight-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      transition: all var(--transition);
+    }
+
+    .highlight-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-5px);
+      border-color: rgba(14, 165, 233, .3);
+    }
+
+    .highlight-icon {
+      font-size: 1.5rem;
+      margin-bottom: .5rem;
+    }
+
+    .highlight-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    .highlight-value span {
+      color: var(--cyan);
+    }
+
+    .highlight-desc {
+      font-size: .82rem;
+      color: var(--text-muted);
+      margin-top: .2rem;
+    }
+
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1.5rem;
+    }
+
+    .tag {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      color: var(--navy-mid);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .3rem .8rem;
+      border-radius: 999px;
+    }
+
+    .tag.primary {
+      background: rgba(14, 165, 233, .1);
+      border-color: rgba(14, 165, 233, .25);
+      color: var(--cyan-dark);
+    }
+
+    /* ─── Experience Timeline ───────────────────────────────────── */
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--cyan), var(--teal), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2.5rem 2rem;
+      opacity: 0;
+      transform: translateX(-16px);
+      transition: opacity .5s ease, transform .5s ease;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -2rem;
+      top: .35rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: var(--cyan);
+      border: 3px solid var(--bg-alt);
+      box-shadow: 0 0 0 3px rgba(14, 165, 233, .2);
+      transform: translateX(-6px);
+    }
+
+    .timeline-item.current .timeline-dot {
+      background: var(--cyan);
+      animation: pulse 2s infinite;
+    }
+
+    .timeline-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: .6rem;
+      margin-bottom: .5rem;
+    }
+
+    .timeline-company {
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--cyan);
+    }
+
+    .timeline-period {
+      font-size: .78rem;
+      color: var(--text-muted);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: .15rem .6rem;
+      border-radius: 999px;
+    }
+
+    .timeline-role {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .3rem;
+    }
+
+    .timeline-location {
+      font-size: .8rem;
+      color: var(--slate);
+      margin-bottom: .7rem;
+    }
+
+    .timeline-desc {
+      font-size: .92rem;
+      color: var(--text-muted);
+      margin-bottom: .7rem;
+    }
+
+    .timeline-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+    }
+
+    .timeline-bullets li {
+      font-size: .88rem;
+      color: var(--text-muted);
+      padding-left: 1.2rem;
+      position: relative;
+    }
+
+    .timeline-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: .7rem;
+      top: .15rem;
+    }
+
+    .timeline-bullets li strong {
+      color: var(--text);
+    }
+
+    /* ─── Skills ────────────────────────────────────────────────── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-category {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .skill-category.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-category:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-6px) !important;
+      border-color: rgba(14, 165, 233, .3);
+    }
+
+    .skill-cat-header {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      margin-bottom: 1rem;
+      padding-bottom: .8rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skill-cat-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .skill-cat-name {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .skill-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .skill-chip {
+      background: var(--bg-alt);
+      color: var(--navy-mid);
+      font-size: .78rem;
+      font-weight: 500;
+      padding: .3rem .75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+    }
+
+    /* ─── Projects ──────────────────────────────────────────────── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      transition: all var(--transition);
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    .project-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: opacity .6s cubic-bezier(0.4, 0, 0.2, 1), transform .6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-8px);
+      border-color: rgba(14, 165, 233, .3);
+    }
+
+    .project-card-top {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .project-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .2rem;
+    }
+
+    .project-type {
+      font-size: .75rem;
+      color: var(--cyan-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .project-desc {
+      font-size: .88rem;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    .project-metrics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+    }
+
+    .metric-badge {
+      background: rgba(14, 165, 233, .08);
+      border: 1px solid rgba(14, 165, 233, .2);
+      color: var(--cyan-dark);
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .25rem .65rem;
+      border-radius: 6px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: auto;
+      padding-top: .5rem;
+      border-top: 1px solid var(--border);
+    }
+
+    .project-tag {
+      background: var(--bg-alt);
+      color: var(--slate);
+      font-size: .72rem;
+      padding: .2rem .55rem;
+      border-radius: 4px;
+    }
+
+    /* ─── Certifications ────────────────────────────────────────── */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--cyan);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      transition: all var(--transition);
+    }
+
+    .cert-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateX(6px);
+      border-color: rgba(14, 165, 233, .3);
+    }
+
+    .cert-icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .cert-name {
+      font-size: .9rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .cert-issuer {
+      font-size: .78rem;
+      color: var(--text-muted);
+      margin-top: .15rem;
+    }
+
+    /* ─── Contact ───────────────────────────────────────────────── */
+    #contact {
+      background: var(--navy);
+    }
+
+    #contact .section-label {
+      color: var(--teal);
+    }
+
+    #contact .section-title {
+      color: var(--white);
+    }
+
+    #contact .section-subtitle {
+      color: var(--slate-light);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.1rem 1.4rem;
+      background: rgba(255, 255, 255, .05);
+      border: 1px solid rgba(255, 255, 255, .08);
+      border-radius: var(--radius);
+      transition: background var(--transition), border-color var(--transition);
+      color: var(--white);
+    }
+
+    .contact-item:hover {
+      background: rgba(14, 165, 233, .1);
+      border-color: rgba(14, 165, 233, .3);
+      color: var(--white);
+    }
+
+    .contact-item-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      background: rgba(14, 165, 233, .15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item-label {
+      font-size: .72rem;
+      color: var(--slate-light);
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .1rem;
+    }
+
+    .contact-item-value {
+      font-size: .92rem;
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .contact-note {
+      background: rgba(14, 165, 233, .08);
+      border: 1px solid rgba(14, 165, 233, .2);
+      border-radius: var(--radius);
+      padding: 2rem;
+      color: var(--slate-light);
+      font-size: .95rem;
+      line-height: 1.75;
+    }
+
+    .contact-note strong {
+      color: var(--white);
+    }
+
+    .contact-note .geo-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem;
+      margin-top: 1rem;
+    }
+
+    .geo-chip {
+      background: rgba(20, 184, 166, .1);
+      border: 1px solid rgba(20, 184, 166, .25);
+      color: var(--teal);
+      font-size: .78rem;
+      font-weight: 600;
+      padding: .3rem .8rem;
+      border-radius: 999px;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      background: #060d1a;
+      color: var(--slate);
+      text-align: center;
+      padding: 1.8rem 1.5rem;
+      font-size: .82rem;
+    }
+
+    footer a {
+      color: var(--cyan);
+    }
+
+    /* ─── Animations ────────────────────────────────────────────── */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-16px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(14, 165, 233, .4);
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(14, 165, 233, 0);
+      }
+    }
+
+    /* ─── Icon color helpers ────────────────────────────────────── */
+    .ic-cyan {
+      background: rgba(14, 165, 233, .12);
+    }
+
+    .ic-teal {
+      background: rgba(20, 184, 166, .12);
+    }
+
+    .ic-violet {
+      background: rgba(139, 92, 246, .12);
+    }
+
+    .ic-amber {
+      background: rgba(245, 158, 11, .12);
+    }
+
+    .ic-rose {
+      background: rgba(244, 63, 94, .12);
+    }
+
+    .ic-green {
+      background: rgba(34, 197, 94, .12);
+    }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+      }
+
+      .nav-links.open {
+        display: flex;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--navy);
+        padding: 1.2rem 1.5rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, .08);
+        gap: 1.2rem;
+      }
+
+      .nav-toggle {
+        display: flex;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-highlights {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .about-highlights {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════ NAV -->
+  <nav id="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a class="nav-logo" href="#hero">Manjit <span>Guha</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════ HERO -->
+  <section id="hero" aria-labelledby="hero-heading">
+    <div class="container hero-inner">
+      <div class="hero-badge">Principal Architect &amp; Enterprise Data Leader</div>
+      <h1 class="hero-name" id="hero-heading">Manjit <em>Guha</em></h1>
+      <p class="hero-title">Associate Director · Principal Technology Architect · MDM Specialist · Generative AI</p>
+      <p class="hero-tagline">
+        <strong>21+ years</strong> designing cloud-native data platforms, enterprise MDM solutions,
+        and AI-driven architectures across Healthcare, Lifesciences, Insurance, and Banking —
+        globally across USA, Middle East, and India.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="https://www.linkedin.com/in/manjitguha/" target="_blank" rel="noopener"
+          class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="hero-stat-value">21<span>+</span></div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">50<span>M+</span></div>
+          <div class="hero-stat-label">Records Mastered</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">$2<span>M+</span></div>
+          <div class="hero-stat-label">Program Value Delivered</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">8<span>+</span></div>
+          <div class="hero-stat-label">Enterprise Programs Led</div>
+        </div>
+        <div>
+          <div class="hero-stat-value">40<span>+</span></div>
+          <div class="hero-stat-label">Countries Deployed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ ABOUT -->
+  <section id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-grid">
+        <div>
+          <div class="about-avatar" aria-hidden="true">MG</div>
+          <span class="section-label">About Me</span>
+          <h2 class="section-title" id="about-heading">Enterprise Data Platform Leader &amp; IP Creator</h2>
+          <div class="about-text">
+            <p>
+              Senior Technology Leader with <strong>21+ years</strong> of experience in Cloud,
+              Master Data Management, and Enterprise Integration. Specialized in Reltio MDM,
+              Customer 360, and cloud-native architectures.
+            </p>
+            <p>
+              Creator of the <strong>Cognizant Data Unification Framework</strong> — a company IP
+              deployed across global clients including Fortune 500 Insurance, Pharma, and Hospitality brands, mastering
+              <strong>50M+ customer records</strong> across 12 heterogeneous source systems.
+            </p>
+            <p>
+              I thrive at the intersection of <strong>technology innovation and business impact</strong>,
+              partnering with CXOs and global stakeholders to define data strategy, governance
+              models, and investment roadmaps that drive measurable outcomes.
+            </p>
+          </div>
+          <div class="domain-tags">
+            <span class="tag primary">Healthcare</span>
+            <span class="tag primary">Lifesciences</span>
+            <span class="tag primary">Insurance</span>
+            <span class="tag">Retail</span>
+            <span class="tag">Banking</span>
+          </div>
+        </div>
+        <div>
+          <div class="about-highlights">
+            <div class="highlight-card">
+              <div class="highlight-icon" aria-hidden="true">🏗️</div>
+              <div class="highlight-value">$2<span>M+</span></div>
+              <div class="highlight-desc">Program value from proprietary CDU Framework IP</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon" aria-hidden="true">🌐</div>
+              <div class="highlight-value">40<span>+</span></div>
+              <div class="highlight-desc">Countries covered in global Lifesciences MDM rollout</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon" aria-hidden="true">👥</div>
+              <div class="highlight-value">15<span>+</span></div>
+              <div class="highlight-desc">Associates led in Intelligent MDM practice</div>
+            </div>
+            <div class="highlight-card">
+              <div class="highlight-icon" aria-hidden="true">☁️</div>
+              <div class="highlight-value">70<span>%</span></div>
+              <div class="highlight-desc">Project exposure in USA / Canada markets</div>
+            </div>
+          </div>
+          <div
+            style="margin-top: 1.5rem; background: var(--white); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem;">
+            <div
+              style="font-size:.8rem; font-weight:700; text-transform:uppercase; letter-spacing:.07em; color:var(--slate); margin-bottom:.8rem;">
+              Education</div>
+            <div style="font-weight:700; color:var(--navy); font-size:.95rem;">B.Tech – Chemical Engineering</div>
+            <div style="font-size:.85rem; color:var(--text-muted);">National Institute of Technology (NIT), Rourkela
+            </div>
+            <div style="font-size:.82rem; color:var(--cyan-dark); margin-top:.2rem; font-weight:600;">First Class with
+              Distinction · 79.9% · 2000–2004</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ EXPERIENCE -->
+  <section id="experience" aria-labelledby="exp-heading">
+    <div class="container">
+      <span class="section-label">Career</span>
+      <h2 class="section-title" id="exp-heading">Professional Experience</h2>
+      <p class="section-subtitle">
+        A journey spanning enterprise consulting, product architecture, and global delivery
+        across the world's leading technology organisations.
+      </p>
+
+      <div class="timeline">
+
+        <!-- Cognizant — Principal Architect -->
+        <article class="timeline-item current" aria-label="Cognizant Principal Architect role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Cognizant Technology Solutions</span>
+            <span class="timeline-period">2021 – Present</span>
+          </div>
+          <div class="timeline-role">Associate Director &amp; Principal Technology Architect</div>
+          <div class="timeline-location">📍 Kolkata, India</div>
+          <ul class="timeline-bullets">
+            <li>Created and patented <strong>Cognizant Data Unification Framework (company IP)</strong>, deployed across
+              multiple Fortune 500 Insurance, Pharma, and Hospitality clients — generating <strong>$2M+ program
+                value</strong>.</li>
+            <li>Led a major F&B Guest Master implementation mastering <strong>50M+ customer records</strong> across 12
+              heterogeneous source systems — one of the largest MDM platforms in the organisation.</li>
+            <li>Partnered with CXOs, business leaders, and global stakeholders to define data strategy, investment
+              roadmap, and governance models.</li>
+            <li>Headed Intelligent MDM practice with <strong>15+ associates</strong>, delivering 8+ enterprise programs
+              across healthcare and life sciences clients.</li>
+            <li>Delivered end-to-end enterprise architecture, governance, and integration framework for high-volume,
+              multi-domain data ecosystems.</li>
+            <li>Owned delivery and technology budgets across multi-million-dollar transformation programs; drove revenue
+              growth across strategic accounts.</li>
+          </ul>
+        </article>
+
+        <!-- Cognizant — Senior Manager -->
+        <article class="timeline-item" aria-label="Cognizant Senior Manager role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Cognizant Technology Solutions</span>
+            <span class="timeline-period">2016 – 2021 · 5 yrs</span>
+          </div>
+          <div class="timeline-role">Senior Manager, Projects</div>
+          <div class="timeline-location">📍 Kolkata, India</div>
+          <ul class="timeline-bullets">
+            <li>Delivered bespoke <strong>Customer 360 solution</strong> for a leading Dubai-based insurance provider.
+            </li>
+            <li>Designed ingestion and transformation pipelines using Spring Boot, AWS Kinesis, Elasticsearch, and
+              MongoDB.</li>
+            <li>Architected and implemented Reltio MDM solutions integrating <strong>Salesforce, MS Dynamics, and
+                SAP</strong>.</li>
+            <li>Designed bidirectional integration pipelines using Reltio Integration Hub and Workato.</li>
+            <li>Created Angular-based data stewardship dashboards and REST services for MDM governance.</li>
+          </ul>
+        </article>
+
+        <!-- Infosys — Technology Architect -->
+        <article class="timeline-item" aria-label="Infosys Technology Architect role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Infosys Ltd.</span>
+            <span class="timeline-period">2015 – 2016 · 1.5 yrs</span>
+          </div>
+          <div class="timeline-role">Technology Architect</div>
+          <div class="timeline-location">📍 Bhubaneswar, India</div>
+          <ul class="timeline-bullets">
+            <li>Worked on MDM and enterprise integration initiatives for <strong>a leading US Financial Services
+                provider</strong>.</li>
+            <li>Architected and developed a custom <strong>Spring Batch framework</strong> replacing the legacy
+              integration platform — improving scalability, performance, and maintainability.</li>
+            <li>Led end-to-end migration strategy including assessment, design, execution, and validation of integration
+              flows.</li>
+          </ul>
+        </article>
+
+        <!-- Cognizant — Technology Architect -->
+        <article class="timeline-item" aria-label="Cognizant Technology Architect role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Cognizant Technology Solutions</span>
+            <span class="timeline-period">2012 – 2015 · 2.5 yrs</span>
+          </div>
+          <div class="timeline-role">Technology Architect</div>
+          <div class="timeline-location">📍 Chennai · Hyderabad · Phoenix, USA</div>
+          <ul class="timeline-bullets">
+            <li>Clients: <strong>Fortune 500 Healthcare, Pharmacy, and Distribution leaders</strong></li>
+            <li>Designed enterprise-grade healthcare applications and integrations.</li>
+          </ul>
+        </article>
+
+        <!-- Bank of America -->
+        <article class="timeline-item" aria-label="Bank of America Senior Analyst role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">BA Continuum India (Bank of America)</span>
+            <span class="timeline-period">2011 – 2012 · 1 yr</span>
+          </div>
+          <div class="timeline-role">Senior Technology Analyst</div>
+          <div class="timeline-location">📍 Gurgaon, India</div>
+          <ul class="timeline-bullets">
+            <li>Led several modules for the <strong>Fraud Detection Service Layer</strong> for the Cards division.</li>
+          </ul>
+        </article>
+
+        <!-- Infosys — Technology Lead -->
+        <article class="timeline-item" aria-label="Infosys Technology Lead role">
+          <div class="timeline-dot"></div>
+          <div class="timeline-meta">
+            <span class="timeline-company">Infosys Ltd.</span>
+            <span class="timeline-period">2004 – 2011 · 7 yrs</span>
+          </div>
+          <div class="timeline-role">Technology Lead</div>
+          <div class="timeline-location">📍 Bhubaneswar, India · Hartford &amp; Milwaukee, USA</div>
+          <ul class="timeline-bullets">
+            <li>Led key banking and insurance projects in development and support roles.</li>
+            <li>6+ years of client-facing experience on-site in <strong>Hartford, Connecticut</strong>.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ SKILLS -->
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <span class="section-label">Expertise</span>
+      <h2 class="section-title" id="skills-heading">Skills &amp; Technologies</h2>
+      <p class="section-subtitle">A broad, deep stack spanning MDM platforms, cloud architecture, integration
+        engineering, and AI/ML.</p>
+
+      <div class="skills-grid">
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-cyan" aria-hidden="true">☁️</div>
+            <div class="skill-cat-name">Cloud Platforms</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">AWS Lambda</span>
+            <span class="skill-chip">AWS Kinesis</span>
+            <span class="skill-chip">S3</span>
+            <span class="skill-chip">Redshift</span>
+            <span class="skill-chip">GCP Pub/Sub</span>
+            <span class="skill-chip">Dataflow</span>
+            <span class="skill-chip">BigQuery</span>
+            <span class="skill-chip">GCS</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-violet" aria-hidden="true">🗄️</div>
+            <div class="skill-cat-name">MDM &amp; Integration Platforms</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">Reltio MDM</span>
+            <span class="skill-chip">Reltio Integration Hub</span>
+            <span class="skill-chip">Workato</span>
+            <span class="skill-chip">Informatica</span>
+            <span class="skill-chip">Salesforce</span>
+            <span class="skill-chip">MS Dynamics</span>
+            <span class="skill-chip">SAP</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-teal" aria-hidden="true">⚙️</div>
+            <div class="skill-cat-name">Programming &amp; Frameworks</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">Java</span>
+            <span class="skill-chip">JEE</span>
+            <span class="skill-chip">Spring Boot</span>
+            <span class="skill-chip">Spring Batch</span>
+            <span class="skill-chip">Spring Integration</span>
+            <span class="skill-chip">Apache Beam</span>
+            <span class="skill-chip">Angular</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-amber" aria-hidden="true">🔗</div>
+            <div class="skill-cat-name">Architecture &amp; Design</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">Enterprise Architecture</span>
+            <span class="skill-chip">Microservices</span>
+            <span class="skill-chip">REST / SOAP APIs</span>
+            <span class="skill-chip">Event-Driven Architecture</span>
+            <span class="skill-chip">Customer 360</span>
+            <span class="skill-chip">Data Governance</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-rose" aria-hidden="true">🗃️</div>
+            <div class="skill-cat-name">Data Platforms &amp; Databases</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">Elasticsearch</span>
+            <span class="skill-chip">MongoDB</span>
+            <span class="skill-chip">PostgreSQL</span>
+            <span class="skill-chip">Redshift</span>
+            <span class="skill-chip">BigQuery</span>
+            <span class="skill-chip">Apache Beam</span>
+          </div>
+        </div>
+
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <div class="skill-cat-icon ic-green" aria-hidden="true">🛠️</div>
+            <div class="skill-cat-name">DevOps &amp; AI/ML</div>
+          </div>
+          <div class="skill-chips">
+            <span class="skill-chip">Docker</span>
+            <span class="skill-chip">Kubernetes</span>
+            <span class="skill-chip">Terraform</span>
+            <span class="skill-chip">Jenkins</span>
+            <span class="skill-chip">Git</span>
+            <span class="skill-chip">Generative AI</span>
+            <span class="skill-chip">AI/ML Platforms</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ PROJECTS -->
+  <section id="projects" aria-labelledby="projects-heading">
+    <div class="container">
+      <span class="section-label">Portfolio</span>
+      <h2 class="section-title" id="projects-heading">Key Projects &amp; Achievements</h2>
+      <p class="section-subtitle">Enterprise-scale data platform programs delivered across global markets.</p>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-cyan" aria-hidden="true">🏆</div>
+            <div>
+              <div class="project-name">Cognizant Data Unification Framework</div>
+              <div class="project-type">Company IP · Enterprise MDM Platform</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Developed and patented a proprietary enterprise MDM platform registered as company IP.
+            Deployed across global clients including top Insurance, Pharma, and Hospitality brands —
+            recognised as best-in-class implementation for a major F&B Guest Master.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">$2M+ Value</span>
+            <span class="metric-badge">50M+ Records</span>
+            <span class="metric-badge">12+ Source Systems</span>
+            <span class="metric-badge">4 Global Clients</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Reltio MDM</span>
+            <span class="project-tag">Java</span>
+            <span class="project-tag">AWS</span>
+            <span class="project-tag">Data Governance</span>
+            <span class="project-tag">IP Development</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-violet" aria-hidden="true">🌐</div>
+            <div>
+              <div class="project-name">Global Lifesciences MDM Rollout</div>
+              <div class="project-type">Enterprise MDM · HCP / HCO / Product Master</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Reltio-based HCP/HCO/Product Master implementation spanning 40+ countries
+            with bidirectional synchronisation to Salesforce and MS Dynamics.
+            AWS-based downstream integration pipeline into Redshift for analytics.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">40+ Countries</span>
+            <span class="metric-badge">Bidirectional Sync</span>
+            <span class="metric-badge">AWS Redshift</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Reltio</span>
+            <span class="project-tag">Salesforce</span>
+            <span class="project-tag">MS Dynamics</span>
+            <span class="project-tag">AWS</span>
+            <span class="project-tag">Lifesciences</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-teal" aria-hidden="true">🏙️</div>
+            <div>
+              <div class="project-name">Customer 360 — Dubai Insurance Provider</div>
+              <div class="project-type">Customer Data Platform · Insurance Domain</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Designed a microservices-based Customer 360 platform for a leading Middle East
+            insurance company. Enabled real-time and batch ingestion, data stewardship,
+            and DQ dashboards for MDM governance.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">Real-time Ingestion</span>
+            <span class="metric-badge">DQ Dashboards</span>
+            <span class="metric-badge">Middle East</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Spring Boot</span>
+            <span class="project-tag">MongoDB</span>
+            <span class="project-tag">Elasticsearch</span>
+            <span class="project-tag">AWS Lambda</span>
+            <span class="project-tag">Kinesis</span>
+            <span class="project-tag">Angular</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-amber" aria-hidden="true">🏦</div>
+            <div>
+              <div class="project-name">Healthcare Enterprise Integrations</div>
+              <div class="project-type">Enterprise Architecture · US Healthcare</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Designed and delivered enterprise-grade healthcare applications and system integrations
+            for three of America's largest healthcare, pharmacy, and healthcare distribution
+            organisations.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">Top Pharmacy Chain</span>
+            <span class="metric-badge">Leading Healthcare Provider</span>
+            <span class="metric-badge">Major Distributor</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Java / JEE</span>
+            <span class="project-tag">Spring</span>
+            <span class="project-tag">Healthcare</span>
+            <span class="project-tag">Enterprise Integration</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-rose" aria-hidden="true">🔄</div>
+            <div>
+              <div class="project-name">Legacy Integration Modernisation</div>
+              <div class="project-type">Platform Engineering · Financial Services</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Architected a custom Spring Batch framework that replaced the legacy integration
+            platform for a leading Financial Services provider, improving scalability, performance, and maintainability.
+            Led the end-to-end migration with minimal business disruption.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">Top Financial Client</span>
+            <span class="metric-badge">Legacy → Modern</span>
+            <span class="metric-badge">Zero Disruption</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">Spring Batch</span>
+            <span class="project-tag">Spring Integration</span>
+            <span class="project-tag">Financial Services</span>
+            <span class="project-tag">MDM</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-card-top">
+            <div class="project-icon ic-green" aria-hidden="true">✍️</div>
+            <div>
+              <div class="project-name">Thought Leadership &amp; Practice Building</div>
+              <div class="project-type">IP · Whitepapers · Mentorship</div>
+            </div>
+          </div>
+          <p class="project-desc">
+            Authored thought leadership content and whitepapers influencing enterprise MDM and
+            cloud adoption strategies. Drives pre-sales, solutioning, and client workshops.
+            Delivered training and mentorship programs across global delivery teams.
+          </p>
+          <div class="project-metrics">
+            <span class="metric-badge">15+ Mentees</span>
+            <span class="metric-badge">Global Delivery</span>
+            <span class="metric-badge">Pre-sales</span>
+          </div>
+          <div class="project-tags">
+            <span class="project-tag">MDM Strategy</span>
+            <span class="project-tag">Cloud Adoption</span>
+            <span class="project-tag">Capability Building</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ CERTIFICATIONS -->
+  <section id="certifications" aria-labelledby="certs-heading">
+    <div class="container">
+      <span class="section-label">Credentials</span>
+      <h2 class="section-title" id="certs-heading">Certifications</h2>
+      <p class="section-subtitle">Industry-recognised credentials validating expertise in cloud, project management, and
+        engineering.</p>
+      <div class="certs-grid">
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true">☁️</div>
+          <div>
+            <div class="cert-name">Google Cloud Certified Professional Data Engineer</div>
+            <div class="cert-issuer">Google Cloud</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true">📋</div>
+          <div>
+            <div class="cert-name">Project Management Professional (PMP)</div>
+            <div class="cert-issuer">PMI — Project Management Institute</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true">☕</div>
+          <div>
+            <div class="cert-name">Sun Certified Java Programmer (SCJP) 5.0</div>
+            <div class="cert-issuer">Sun Microsystems</div>
+          </div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-icon" aria-hidden="true">📱</div>
+          <div>
+            <div class="cert-name">Highly Scalable Web &amp; Mobile Apps on Bluemix</div>
+            <div class="cert-issuer">Avnet / IBM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ CONTACT -->
+  <section id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+      <span class="section-label">Let's Connect</span>
+      <h2 class="section-title" id="contact-heading">Get in Touch</h2>
+      <p class="section-subtitle">
+        Open to strategic advisory, consulting engagements, and leadership opportunities in Enterprise MDM,
+        Data Platform Architecture, and AI-driven transformation.
+      </p>
+
+      <div class="contact-grid">
+        <div class="contact-links">
+          <a class="contact-item" href="mailto:manjit.guha@gmail.com">
+            <div class="contact-item-icon" aria-hidden="true">✉️</div>
+            <div>
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">manjit.guha@gmail.com</div>
+            </div>
+          </a>
+          <a class="contact-item" href="tel:+917044088776">
+            <div class="contact-item-icon" aria-hidden="true">📞</div>
+            <div>
+              <div class="contact-item-label">Phone</div>
+              <div class="contact-item-value">+91 70440 88776</div>
+            </div>
+          </a>
+          <a class="contact-item" href="https://www.linkedin.com/in/manjitguha/" target="_blank" rel="noopener">
+            <div class="contact-item-icon" aria-hidden="true">🔗</div>
+            <div>
+              <div class="contact-item-label">LinkedIn</div>
+              <div class="contact-item-value">linkedin.com/in/manjitguha</div>
+            </div>
+          </a>
+          <div class="contact-item" style="cursor:default;">
+            <div class="contact-item-icon" aria-hidden="true">📍</div>
+            <div>
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">Kolkata, West Bengal, India</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-note">
+          <strong>Domain Focus:</strong> Healthcare · Lifesciences · Insurance · Banking · Retail
+          <br><br>
+          <strong>Engagement Types:</strong> Enterprise MDM Advisory · Platform Architecture ·
+          Digital Transformation · Technical Leadership · Generative AI Integration
+          <br><br>
+          <strong>Geographic Reach:</strong>
+          <div class="geo-chips">
+            <span class="geo-chip">🇺🇸 USA / Canada (70%+ exposure)</span>
+            <span class="geo-chip">🇦🇪 Middle East (20% exposure)</span>
+            <span class="geo-chip">🇮🇳 India (Based)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════ FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© 2026 Manjit Guha · Principal Architect &amp; Enterprise Data Platform Leader ·
+        <a href="https://www.linkedin.com/in/manjitguha/" target="_blank" rel="noopener">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════ JS -->
+  <script>
+    /* ── Nav toggle ──────────────────────────────────── */
+    const toggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    toggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+
+    /* Close nav on link click */
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      });
+    });
+
+    /* ── Scroll-based reveal (Intersection Observer) ── */
+    const revealEls = document.querySelectorAll(
+      '.timeline-item, .skill-category, .project-card'
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          /* Stagger siblings slightly */
+          const siblings = [...entry.target.parentElement.children];
+          const idx = siblings.indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, idx * 80);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ── Active nav link highlight on scroll ─────────── */
+    const sections = document.querySelectorAll('section[id]');
+    const navAnchors = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          navAnchors.forEach(a => {
+            a.style.color = a.getAttribute('href') === '#' + id
+              ? 'var(--white)'
+              : '';
+          });
+        }
+      });
+    }, { threshold: 0.35 });
+
+    sections.forEach(s => sectionObserver.observe(s));
+  </script>
+
+</body>
+
+</html>
